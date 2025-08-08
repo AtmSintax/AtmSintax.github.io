@@ -5,11 +5,130 @@
   <title>Proyecto 1 - Aprende a crear una página web usando tu celular</title>
 </head>
 <body>
-  <h1>Proyecto 1</h1>
-  <h2>Aprende a crear una página web usando tu celular</h2>
-  
+  <h1>📱 Proyecto 1: ¡Crea tu página web desde cero usando solo tu celular!</h1>
+
   <p>En este proyecto, te muestro paso a paso cómo crear una página web básica directamente desde tu celular usando Termux y GitHub Pages.</p>
-  
+
+  <hr>
+
+  <h2>🧩 Paso 1: Instala Termux y crea una cuenta en GitHub</h2>
+  <p><strong>Termux:</strong> Buscá "Termux" en F-Droid o Google Play. Es una terminal que te permite usar comandos tipo Linux en Android.</p>
+  <p><strong>GitHub:</strong> Andá a <a href="https://github.com" target="_blank">github.com</a> y creá tu cuenta (gratis).</p>
+
+  <hr>
+
+  <h2>🔧 Paso 2: Configura Termux y actualizá paquetes</h2>
+  <pre><code>pkg update && pkg upgrade
+pkg install git python</code></pre>
+
+  <hr>
+
+  <h2>👤 Paso 3: Configurá tu cuenta de GitHub en Termux</h2>
+  <pre><code>git config --global user.name "TuNombreDeGitHub"
+git config --global user.email "tucorreo@gmail.com"</code></pre>
+  <p>Esto enlaza tu Termux con tu cuenta de GitHub para poder subir cosas después.</p>
+
+  <hr>
+
+  <h2>📦 Paso 4: Crea tu repositorio en GitHub</h2>
+  <ol>
+    <li>Andá a GitHub > Repositorios > “New”</li>
+    <li>Poné un nombre como <code>mi-pagina</code></li>
+    <li>Elegí “público” y NO marques la opción de README</li>
+    <li>Apretá “Create repository”</li>
+  </ol>
+
+  <hr>
+
+  <h2>🌀 Paso 5: Cloná el repositorio en tu celular</h2>
+  <p>Copiá la URL de tu repo y escribí en Termux:</p>
+  <pre><code>git clone https://github.com/TuNombreDeGitHub/mi-pagina.git
+cd mi-pagina</code></pre>
+
+  <hr>
+
+  <h2>🧱 Paso 6: Crea tu archivo HTML básico</h2>
+  <p>Instalá el editor nano y creá tu archivo:</p>
+  <pre><code>pkg install nano
+nano index.html</code></pre>
+  <p>Pegá este código:</p>
+  <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;Mi primera web&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;¡Hola mundo desde mi celu!&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+  <p><strong>Guardás con:</strong> CTRL + O (Enter), luego CTRL + X</p>
+
+  <hr>
+
+  <h2>🚀 Paso 7: Subí los cambios con Git (tu primer push)</h2>
+  <p>Primero, agregás los archivos:</p>
+  <pre><code>git add .
+git commit -m "Mi primera página web desde el celu"</code></pre>
+
+  <p>Después, hacés <code>git push</code> usando un token de acceso como contraseña.</p>
+  <p>Para conseguir tu token:</p>
+  <ol>
+    <li>Entrá a GitHub → Settings → Developer settings → Personal Access Tokens → Fine-grained tokens</li>
+    <li>Creá uno con permisos para repos públicos</li>
+    <li>Usalo como contraseña cuando te lo pida Termux</li>
+  </ol>
+
+  <p>Finalmente:</p>
+  <pre><code>git push</code></pre>
+
+  <hr>
+
+  <h2>🌐 Paso 8: Activá GitHub Pages</h2>
+  <ol>
+    <li>En GitHub, andá al repo → Settings → Pages</li>
+    <li>En “Source”, elegí <strong>main</strong> y carpeta <strong>/ (root)</strong></li>
+    <li>Guardá y accedé al link que aparece: <br>
+      <code>https://TuUsuario.github.io/mi-pagina</code></li>
+  </ol>
+
+  <hr>
+
+  <h2>🧪 Paso 9: Probá tus cambios antes de subirlos</h2>
+<p>
+  Cada vez que modifiques algo, hacé una copia del archivo (como <code>index.html</code>) fuera de tu carpeta de GitHub y probalo localmente con:
+</p>
+<pre><code>python -m http.server</code></pre>
+<p>
+  Después, abrí tu navegador en <a href="http://localhost:8000" target="_blank">http://localhost:8000</a> para ver cómo quedó.<br>
+  Si te gusta el resultado, reemplazá el archivo original dentro del repositorio y subilo con:
+</p>
+<pre><code>git add .
+git commit -m "Actualización"
+git push</code></pre>
+
+  <hr>
+
+  <h2>🎨 Paso 10: Aprendé CSS y mejorá el diseño</h2>
+  <p>Cuando empieces con CSS, podés agregar un bloque como este dentro del &lt;head&gt; de tu HTML:</p>
+  <pre><code>&lt;style&gt;
+body {
+  background-color: #111;
+  color: white;
+  font-family: sans-serif;
+}
+&lt;/style&gt;</code></pre>
+
+  <hr>
+
+  <h2>💡 Consejos extra</h2>
+  <ul>
+    <li>✅ Usá ChatGPT para entender cosas más rápido</li>
+    <li>✅ FreeCodeCamp y W3Schools te ayudan con HTML y CSS</li>
+    <li>✅ Usá <code>git commit</code> seguido para guardar avances</li>
+    <li>❌ No tengas miedo de romper cosas, ¡así se aprende!</li>
+  </ul>
+
   <p><a href="index.html">← Volver a la página principal</a></p>
 </body>
 </html>
